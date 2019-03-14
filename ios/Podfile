@@ -1,0 +1,61 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.2'
+  require_relative '../node_modules/react-native-unimodules/cocoapods.rb'
+
+
+target 'colorGrabber' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for colorGrabber
+
+    pod 'React', :path => '../node_modules/react-native', :subspecs => [
+    'Core',
+    'CxxBridge',
+    'DevSupport',
+    'RCTText',
+    'RCTNetwork',
+    'RCTWebSocket',
+    'RCTAnimation',
+    'RCTImage',
+  ]
+ pod 'EXCore', path: '../node_modules/expo-core/ios'
+ pod 'EXFontInterface', path: '../node_modules/expo-font-interface/ios'
+  pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
+  pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+  pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
+  pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+     pod 'EXImageLoaderInterface',
+  :path => "../node_modules/expo-image-loader-interface/ios",
+  :inhibit_warnings => true
+
+  pod 'EXBarCodeScannerInterface',
+  :path => "../node_modules/expo-barcode-scanner-interface/ios",
+  :inhibit_warnings => true
+
+pod 'EXReactNativeAdapter', path: '../node_modules/expo-react-native-adapter/ios', inhibit_warnings: true
+  use_unimodules!
+
+
+
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
+  target 'colorGrabberTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+
+target 'colorGrabber-tvOS' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for colorGrabber-tvOS
+
+  target 'colorGrabber-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
